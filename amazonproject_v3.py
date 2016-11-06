@@ -500,7 +500,7 @@ if __name__ == '__main__':
         bbpriceisbns = manager2.list(profitableisbns)
         partial_fetch_url = partial(fetch_url,sharedproxs = (freshproxies,bbpriceisbns))
         
-        p = Pool(4)
+        p = Pool(6)
         result = p.map(partial_fetch_url,urls, chunksize = 1)
         p.close()
         p.join() 
